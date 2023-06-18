@@ -1,0 +1,19 @@
+{
+    "name": "edydeyemi/s3test",
+    "description": "S3 Upload MockUp",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Edydeyemi",
+            "email": "edydeyemi@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "symfony/dotenv": "^6.0",
+        "aws/aws-sdk-php": "^3.263"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.0"
+    }
+}
