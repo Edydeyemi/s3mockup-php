@@ -21,9 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         "msg" => $upload['msg'],
         "status" => $upload['status'],
     ];
-    header('Location:index.php');
+    var_dump($upload);
+    // header('Location:index.php');
 }
-dump($_SESSION);
 if (isset($_SESSION['flash'])) {
     $flash_msg = $_SESSION['flash']['msg'];
     $status = $_SESSION['flash']['status'];
