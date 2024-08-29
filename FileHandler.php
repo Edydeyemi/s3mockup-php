@@ -31,6 +31,8 @@ class FileHandler
     private $bucket;
     private $sdk;
     private $client;
+    private $endpoint;
+    
     private $options;
 
     private $filename;
@@ -47,6 +49,7 @@ class FileHandler
         $this->key = $_ENV['AWS_KEY'];
         $this->secret = $_ENV['AWS_SECRET'];
         $this->bucket = $_ENV['AWS_BUCKET'];
+        $this->endpoint = $_ENV['AWS_ENDPOINT_URL_S3'];
 
         $this->client = $this->setClient();
     }
@@ -55,6 +58,7 @@ class FileHandler
     {
         return $this->options = [
             'region'            => $this->region,
+            'endpoint' => 'https://fly.storage.tigris.dev',
             'version'           => 'latest',
             'signature_version' => 'v4',
             'credentials' => [
