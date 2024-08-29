@@ -45,10 +45,10 @@ class FileHandler
             mkdir($this->path . '/tmp/', 0755, true);
         }
 
-        $this->region = $_ENV['AWS_REGION'];
-        $this->key = $_ENV['AWS_KEY'];
-        $this->secret = $_ENV['AWS_SECRET'];
-        $this->bucket = $_ENV['AWS_BUCKET'];
+        $this->region   = $_ENV['AWS_REGION'];
+        $this->key      = $_ENV['AWS_KEY'];
+        $this->secret   = $_ENV['AWS_SECRET'];
+        $this->bucket   = $_ENV['AWS_BUCKET'];
         $this->endpoint = $_ENV['AWS_ENDPOINT_URL_S3'];
 
         $this->client = $this->setClient();
@@ -58,13 +58,13 @@ class FileHandler
     {
         return $this->options = [
             'region'            => $this->region,
-            'endpoint' => 'https://fly.storage.tigris.dev',
+            'endpoint'          => $this->endpoint,
             'version'           => 'latest',
             'signature_version' => 'v4',
-            'credentials' => [
-                'key'    => $this->key,
-                'secret' => $this->secret,
-            ],
+            'credentials'       => [
+                                    'key'    => $this->key,
+                                    'secret' => $this->secret,
+                                ],
         ];
     }
 
